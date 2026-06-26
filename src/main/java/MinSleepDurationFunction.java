@@ -6,8 +6,6 @@ public class MinSleepDurationFunction implements Function<List<SleepingSession>,
     @Override
     public SleepAnalysisResult<Long> apply(List<SleepingSession> sessions) {
         long minDuration = sessions.stream().mapToLong(session -> Duration.between(session.getStart(), session.getEnd()).toMinutes()).min().orElse(0);
-
         return new SleepAnalysisResult<>("Минимальная продолжительность сессии сна в минутах", minDuration);
-
     }
 }

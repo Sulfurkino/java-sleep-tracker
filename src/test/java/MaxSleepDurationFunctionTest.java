@@ -13,11 +13,11 @@ class MaxSleepDurationFunctionTest {
     void shouldReturnLongestSleep() {
 
         List<SleepingSession> sessions = List.of(
-                new SleepingSession(LocalDateTime.of(2025,1,1,22,0),
-                        LocalDateTime.of(2025,1,2,8,0), SleepQuality.GOOD),
+                new SleepingSession(LocalDateTime.of(2025, 1, 1, 22, 0),
+                        LocalDateTime.of(2025, 1, 2, 8, 0), SleepQuality.GOOD),
 
-                new SleepingSession(LocalDateTime.of(2025,1,2,22,0),
-                        LocalDateTime.of(2025,1,3,4,0), SleepQuality.GOOD)
+                new SleepingSession(LocalDateTime.of(2025, 1, 2, 22, 0),
+                        LocalDateTime.of(2025, 1, 3, 4, 0), SleepQuality.GOOD)
         );
 
         assertEquals(600, function.apply(sessions).getValue());
