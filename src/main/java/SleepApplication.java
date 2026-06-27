@@ -17,12 +17,18 @@ public class SleepApplication {
             );
 
     public static void main(String[] args) throws Exception {
-
+        if (args.length == 0) {
+            System.out.println("Укажите путь к файлу с логом сна в аргументах запуска.");
+            return;
+        }
         String filePath = args[0];
+
 
         SleepingSessionReader reader = new SleepingSessionReader();
 
         List<SleepingSession> sessions = reader.read(filePath);
+
+
 
         FUNCTIONS.stream()
                 .map(function -> function.apply(sessions))
